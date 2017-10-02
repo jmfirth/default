@@ -1,24 +1,21 @@
 {
   "name": "foobar",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "lint": "tslint \"src/**/*.{ts,tsx}\""
   },
-  "eslintConfig": {
-    "extends": "eslint-config-synacor"
-  },
-  "eslintIgnore": ["build/*"],
   "devDependencies": {
-    "eslint": "^4.5.0",
-    "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
-    "preact-cli": "^1.4.1"
+    "preact-cli": "^1.4.1",
+    "preact-cli-plugin-typescript": "^0.2.2",
+    "tslint": "^5.7.0",
+    "tslint-config-airbnb": "^5.3.0"
   },
   "dependencies": {
     "preact": "^8.2.1",
